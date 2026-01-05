@@ -1,3 +1,121 @@
 * {
+    font-family: 'VT323', monospace; /* Retro Style Font */
+}
+
+.console-wrapper {
+    position: relative;
+    width: 800px;  
+    height: 800px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.2s ease; 
+}
+
+.screen-text {
+    color: var(--screen-color); 
+    position: absolute; 
+    top: 15%;  
+    left: 18%;  
+    width: 64%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme-btn {
+    display: block;
+    width: 135px;
+    margin-top: 2px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+h1 {
+    font-size: 6rem; 
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 2rem; 
+    margin: 0;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem; /* Match your previous h1 size */
+    line-height: 1;
+}
+
+input#minutes-input {
+    background: transparent;
+    border: none;
+    color: inherit; /* Inherit the Game Boy green */
     font-family: 'VT323', monospace;
+    font-size: 4rem;
+    width: 2ch; /* Only wide enough for 2 characters */
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#seconds-display, #colon {
+    font-family: 'VT323', monospace;
+}
+
+button {
+    color: var(--screen-color);
+    font-size: 1.5rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    width: 100vw;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    background-color: transparent; 
+}
+
+/* Green Gameboy */
+.skin-1 {
+    background-image: url('/images/3.png');
+    --screen-color: #73C700; 
+}
+
+/* Blue Gameboy */
+.skin-2 {
+    background-image: url('/images/1.png');
+    --screen-color: #007198; 
+}
+
+/* Purple Gameboy */
+.skin-3 {
+    background-image: url('/images/4.png');
+    --screen-color: #521481; 
+}
+
+/* Yellow Gameboy */
+.skin-4 {
+    background-image: url('/images/2.png');
+    --screen-color: #F5AF00;
 }
