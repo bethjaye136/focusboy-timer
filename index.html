@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FocusBoy!</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>FocusBoy Timer</h1>
     <p>Your productivity pal!</p>
 
     <div class="console-wrapper skin-1" id="console">
-        
-        <div class="screen-text">
-    
-    <div class="timer-display">
-        <input type="number" id="minutes-input" value="25" min="1" max="99">
-        <span id="colon">:</span>
-        <span id="seconds-display">00</span>
-    </div>
+      <div class="screen-text">
+        <div class="timer-display">
+          <input type="number" id="minutes-input" value="25" min="1" max="99" />
+          <span id="colon">:</span>
+          <span id="seconds-display">00</span>
+        </div>
 
-    <div class="controls">
-    <button id="start-btn" onclick="toggleTimer()">START</button>
-    <button id="reset-btn" onclick="resetTimer()">RESET</button>
-    <button id="theme-btn" onclick="changeTheme()">COLOR</button>
-</div>
-
-</div>
-        
+        <div class="controls">
+          <button id="start-btn" onclick="toggleTimer()">START</button>
+          <button id="reset-btn" onclick="resetTimer()">RESET</button>
+          <button id="theme-btn" onclick="changeTheme()">COLOR</button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
