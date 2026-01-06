@@ -80,3 +80,9 @@ function changeTheme() {
   }
   wrapper.classList.add(`skin-${currentSkin}`);
 }
+
+// Disable right click and dragging on images
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('draggable', false);
+});
