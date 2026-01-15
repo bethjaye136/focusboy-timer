@@ -12,7 +12,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #fdf2db;
+  background-color: #f7f0e0;
   gap: 50px;
 }
 
@@ -103,6 +103,7 @@ input[type='number']::-webkit-outer-spin-button {
 /* Green */
 body.skin-1 {
   --screen-color: #73c700;
+  background-color: #ebffe7;
 }
 body.skin-1 .console-wrapper {
   background-image: url('/images/3.png');
@@ -111,6 +112,7 @@ body.skin-1 .console-wrapper {
 /* Blue */
 body.skin-2 {
   --screen-color: #007198;
+  background-color: aliceblue;
 }
 body.skin-2 .console-wrapper {
   background-image: url('/images/1.png');
@@ -119,6 +121,7 @@ body.skin-2 .console-wrapper {
 /* Purple */
 body.skin-3 {
   --screen-color: #521481;
+  background-color: #f9dbfd;
 }
 body.skin-3 .console-wrapper {
   background-image: url('/images/4.png');
@@ -127,6 +130,7 @@ body.skin-3 .console-wrapper {
 /* Yellow */
 body.skin-4 {
   --screen-color: #f5af00;
+  background-color: #faeed3;
 }
 body.skin-4 .console-wrapper {
   background-image: url('/images/2.png');
