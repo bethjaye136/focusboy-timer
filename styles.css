@@ -23,6 +23,11 @@ h1 {
   letter-spacing: 2px;
   margin-bottom: 50px;
   line-height: 1;
+  color: #ffffff;
+  text-shadow: 0 0 5px var(--screen-color, #73c700),
+    0 0 10px var(--screen-color, #73c700), 0 0 20px var(--screen-color, #73c700),
+    0 0 30px var(--screen-color, #73c700), 0 0 40px var(--screen-color, #73c700),
+    0 0 55px var(--screen-color, #73c700), 0 0 70px var(--screen-color, #73c700);
 }
 
 .main {
