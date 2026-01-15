@@ -12,7 +12,7 @@
 
   <p>
     <a href="#-features">Features</a> •
-    <a href="#-under-the-hood">How it Works</a> •
+    <a href="#-extra-details">How it Works</a> •
     <a href="#-embed-in-notion">Notion Setup</a>
   </p>
 
@@ -24,20 +24,24 @@
 
 **FocusBoy** is a nostalgic take on the Pomodoro technique, blending the "Y2K Handheld" aesthetic with professional-grade timekeeping logic.
 
-I built this because most web timers are either boring or inaccurate. FocusBoy is designed to be **embedded**, **customizable**, and **drift-free**. It's not just a timer; it's a desk companion.
+I built this because most web timers are either boring, glitchy, or just don't fit the vibe. FocusBoy is designed to be **embedded**, **customizable**, and **drift-free**. It's not just a timer; it's a desk companion with fun interactive features.
 
 ## ✨ Features
 
+- **⏱️ Custom Timer:** Set any duration (minutes) for your focus session.
+- **🎨 4 Color Themes:** Switch between Grey, Teal, Purple, and Yellow consoles.
+- **💾 Memory Function:** Remembering your custom time setting for easy resets.
+- **📱 Responsive:** Floating layout perfect for embedding in dashboards.
 - **⏱️ Drift-Free Precision:** Unlike standard JS timers that lose sync, FocusBoy uses `Date.now()` delta-checks to ensure 100% accuracy, even if the tab is inactive.
 - **🎨 Dynamic Theming:** 4 switchable "Skins" (Atomic Purple, Teal, classic Grey, Yellow) powered by CSS Variables.
 - **💾 Smart State:** Handles browser interruptions gracefully without losing your progress.
 - **📱 Widget Ready:** Floating, responsive layout designed perfectly for Notion dashboards or OBS overlays.
 
-## 🧠 Under the Hood
+## 🧠 Extra Details
 
 This wasn't just about CSS; the logic needed to be solid.
 
-### The "Drift" Fix
+### Fixing the drifting/glitch issue
 
 Standard `setInterval` loops often drift by a few milliseconds when the browser main thread is busy. To fix this, I implemented a **Delta-Time** approach:
 
@@ -73,5 +77,5 @@ FocusBoy is built to live in your workspace.
 ---
 
 <div align="center">
-  <sub>Built with 💚 by [Your Name]</sub>
+  <sub>Built with 💚 by BethJaye</sub>
 </div>
