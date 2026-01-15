@@ -1,5 +1,6 @@
 * {
-  font-family: "VT323", monospace; /* Retro Style Font */
+  font-family: 'VT323', monospace;
+  box-sizing: border-box;
 }
 
 body {
@@ -8,37 +9,55 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: #fdf2db;
+  gap: 50px;
 }
 
 h1 {
   font-size: 6rem;
-  margin: 0;
   text-align: center;
   font-weight: normal;
   letter-spacing: 2px;
+  margin-bottom: 50px;
+  line-height: 1;
 }
 
-p {
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 10px;
+  margin: 10px 0;
+  width: 200px;
+  background-color: transparent;
+  border: 4px solid var(--screen-color, #73c700);
+  color: var(--screen-color, #73c700);
   font-size: 2rem;
-  margin: 0;
-  text-align: center;
-  margin-top: 10px;
-  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
+button:hover {
+  background-color: var(--screen-color, #73c700);
+  color: #f7f0e0;
+}
 
 .console-wrapper {
   position: relative;
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   transition: background-image 0.2s ease;
+  flex-shrink: 0;
 }
 
 .screen-text {
@@ -52,72 +71,63 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-#theme-btn {
-  display: block;
-  width: 135px;
-  margin-top: 2px;
-  margin-left: auto;
-  margin-right: auto;
+  z-index: 10;
 }
 
 .timer-display {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem; /* Match your previous h1 size */
+  font-size: 5rem;
   line-height: 1;
 }
 
 input#minutes-input {
   background: transparent;
   border: none;
-  color: inherit; /* Inherit the Game Boy green */
-  font-family: "VT323", monospace;
-  font-size: 4rem;
-  width: 2ch; /* Only wide enough for 2 characters */
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  width: 2ch;
   text-align: right;
   padding: 0;
   margin: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-#seconds-display,
-#colon {
-  font-family: "VT323", monospace;
-}
-
-button {
-  color: var(--screen-color);
-  font-size: 1.5rem;
-}
-
 /* Green */
-.skin-1 {
-  background-image: url("/images/3.png");
+body.skin-1 {
   --screen-color: #73c700;
+}
+body.skin-1 .console-wrapper {
+  background-image: url('/images/3.png');
 }
 
 /* Blue */
-.skin-2 {
-  background-image: url("/images/1.png");
+body.skin-2 {
   --screen-color: #007198;
+}
+body.skin-2 .console-wrapper {
+  background-image: url('/images/1.png');
 }
 
 /* Purple */
-.skin-3 {
-  background-image: url("/images/4.png");
+body.skin-3 {
   --screen-color: #521481;
+}
+body.skin-3 .console-wrapper {
+  background-image: url('/images/4.png');
 }
 
 /* Yellow */
-.skin-4 {
-  background-image: url("/images/2.png");
+body.skin-4 {
   --screen-color: #f5af00;
+}
+body.skin-4 .console-wrapper {
+  background-image: url('/images/2.png');
 }

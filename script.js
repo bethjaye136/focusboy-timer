@@ -1,12 +1,19 @@
-const minutesInput = document.getElementById("minutes-input");
-const secondsDisplay = document.getElementById("seconds-display");
-const startBtn = document.getElementById("start-btn");
-const wrapper = document.querySelector(".console-wrapper");
+const minutesInput = document.getElementById('minutes-input');
+const secondsDisplay = document.getElementById('seconds-display');
+const startBtn = document.getElementById('start-btn');
+const resetBtn = document.getElementById('reset-btn');
+const themeBtn = document.getElementById('theme-btn');
 
-let timeLeft;
 let timerId = null;
+let endTime = null;
+let timeLeft = 0;
 let isRunning = false;
-let originalMinutes = 25; // Default time 25 minutes
+let currentSkin = 1;
+const totalSkins = 4;
+
+startBtn.addEventListener('click', toggleTimer);
+resetBtn.addEventListener('click', resetTimer);
+themeBtn.addEventListener('click', changeTheme);
 
 function toggleTimer() {
   if (isRunning) {
@@ -17,72 +24,69 @@ function toggleTimer() {
 }
 
 function startTimer() {
-  if (!timeLeft || timeLeft <= 0) {
-    originalMinutes = parseInt(minutesInput.value);
-    timeLeft = originalMinutes * 60;
+  if (!timeLeft) {
+    const minutes = parseInt(minutesInput.value) || 25;
+    timeLeft = minutes * 60;
   }
 
-  minutesInput.disabled = true;
   isRunning = true;
-  startBtn.innerText = "PAUSE";
+  minutesInput.disabled = true;
+  startBtn.innerText = 'PAUSE';
+
+  endTime = Date.now() + timeLeft * 1000;
 
   timerId = setInterval(() => {
-    timeLeft--;
-    updateDisplay();
+    const secondsLeft = Math.ceil((endTime - Date.now()) / 1000);
+    timeLeft = secondsLeft;
 
     if (timeLeft <= 0) {
       timerFinished();
+    } else {
+      updateDisplay();
     }
-  }, 1000);
+  }, 200);
 }
 
 function pauseTimer() {
   clearInterval(timerId);
   isRunning = false;
-  startBtn.innerText = "RESUME";
+  startBtn.innerText = 'RESUME';
 }
 
 function resetTimer() {
   clearInterval(timerId);
+  timerId = null;
   isRunning = false;
   timeLeft = 0;
 
-  minutesInput.value = originalMinutes.toString().padStart(2, "0");
-  secondsDisplay.innerText = "00";
-
-  startBtn.innerText = "START";
-  minutesInput.disabled = false; // Unlock so user can type a new time
+  minutesInput.value = '25';
+  secondsDisplay.innerText = '00';
+  minutesInput.disabled = false;
+  startBtn.innerText = 'START';
 }
 
 function timerFinished() {
   clearInterval(timerId);
   timerId = null;
   isRunning = false;
-  startBtn.innerText = "DONE";
+  timeLeft = 0;
+
+  minutesInput.value = '00';
+  secondsDisplay.innerText = '00';
   minutesInput.disabled = false;
+  startBtn.innerText = 'DONE';
 }
 
 function updateDisplay() {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
-  minutesInput.value = minutes.toString().padStart(2, "0");
-  secondsDisplay.innerText = seconds.toString().padStart(2, "0");
+  minutesInput.value = minutes.toString().padStart(2, '0');
+  secondsDisplay.innerText = seconds.toString().padStart(2, '0');
 }
-let currentSkin = 1;
-const totalSkins = 4; // 4 images to switch between
 
 function changeTheme() {
-  wrapper.classList.remove(`skin-${currentSkin}`);
-  currentSkin++;
-  if (currentSkin > totalSkins) {
-    currentSkin = 1;
-  }
-  wrapper.classList.add(`skin-${currentSkin}`);
+  document.body.classList.remove(`skin-${currentSkin}`);
+  currentSkin = (currentSkin % totalSkins) + 1;
+  document.body.classList.add(`skin-${currentSkin}`);
 }
-
-// Disable right click and dragging on images
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.querySelectorAll('img').forEach(img => {
-    img.setAttribute('draggable', false);
-});
