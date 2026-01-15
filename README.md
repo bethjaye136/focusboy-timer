@@ -49,36 +49,29 @@ Standard `setInterval` loops often drift by a few milliseconds when the browser 
 
 Instead of loading multiple stylesheets, I used **CSS Custom Properties (Variables)** scoped to the `<body>`.
 
-```css
-/* Example of the Skin System */
-body.skin-1 { --screen-color: #73c700; }
-body.skin-2 { --screen-color: #007198; }
+    /* Example of the Skin System */
+    body.skin-1 { --screen-color: #73c700; }
+    body.skin-2 { --screen-color: #007198; }
+
 This allows the entire color scheme (borders, text, SVGs) to update instantly with a single class change in JavaScript.
 
-🚀 Embed in Notion
+## 🚀 Embed in Notion
+
 FocusBoy is built to live in your workspace.
 
-Copy the live link: [INSERT YOUR LINK HERE]
+1.  Copy the live link: `[INSERT YOUR LINK HERE]`
+2.  Go to your Notion page.
+3.  Type `/embed` and paste the link.
+4.  Resize the block until the Gameboy fits perfectly!
 
-Go to your Notion page.
+## 🛠️ Tech Stack
 
-Type /embed and paste the link.
-
-Resize the block until the Gameboy fits perfectly!
-
-🛠️ Tech Stack
-Semantic Structure
-
-Flexbox & Variables
-
-ES6+ Logic
-
-<div align="center"> <sub>Built with 💚 by [Your Name]</sub> </div>
----
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) **Semantic Structure**
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) **Flexbox & Variables**
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E) **ES6+ Logic**
 
 ---
 
-## 📜 License
-
-This project is open source and available under the [MIT License](LICENSE).
-```
+<div align="center">
+  <sub>Built with 💚 by [Your Name]</sub>
+</div>
