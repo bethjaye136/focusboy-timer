@@ -16,7 +16,7 @@
   <a href="#-embed-in-notion">Notion Setup</a>
 </p>
 
-<img src="images/screenshot-placeholder.png" alt="FocusBoy Demo" width="600" />
+<img src="images/screenshot.png" alt="FocusBoy Demo" width="600" />
 
 </div>
 
