@@ -8,6 +8,7 @@ const petSpeech = document.getElementById('pet-speech');
 const music = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
 const volumeSlider = document.getElementById('volume-slider');
+const powerLed = document.getElementById('power-led');
 
 let timerId = null;
 let endTime = null;
@@ -19,6 +20,17 @@ const totalSkins = 4;
 startBtn.addEventListener('click', toggleTimer);
 resetBtn.addEventListener('click', resetTimer);
 themeBtn.addEventListener('click', changeTheme);
+
+const presetBtns = document.querySelectorAll('.preset-btn');
+presetBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    if (!isRunning) {
+      const minutes = parseInt(e.target.dataset.minutes);
+      minutesInput.value = minutes;
+      timeLeft = 0;
+    }
+  });
+});
 
 function toggleTimer() {
   if (isRunning) {
@@ -35,11 +47,11 @@ function startTimer() {
   }
 
   isRunning = true;
-  minutesInput.disabled = true;
   startBtn.innerText = 'PAUSE';
 
   petImg.src = 'images/nukoSkippingWalk.gif';
   petSpeech.innerText = "Let's Go!";
+  powerLed.classList.add('led-on');
 
   endTime = Date.now() + timeLeft * 1000;
 
@@ -77,6 +89,7 @@ function resetTimer() {
 
   petImg.src = 'images/nukoCatHeart.gif';
   petSpeech.innerText = 'Ready?';
+  powerLed.classList.remove('led-on');
 }
 
 function timerFinished() {
@@ -92,6 +105,7 @@ function timerFinished() {
 
   petImg.src = 'images/nukoCheering.gif';
   petSpeech.innerText = 'Great Job!';
+  powerLed.classList.remove('led-on');
 }
 
 function updateDisplay() {

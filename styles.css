@@ -14,7 +14,8 @@ body {
   align-items: center;
   gap: 50px;
   background-color: #f0f0f0;
-  background-image: linear-gradient(#dadada 1px, transparent 1px),
+  background-image:
+    linear-gradient(#dadada 1px, transparent 1px),
     linear-gradient(90deg, #dadada 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: -1px -1px;
@@ -28,10 +29,14 @@ h1 {
   margin-bottom: 50px;
   line-height: 1;
   color: #ffffff;
-  text-shadow: 0 0 5px var(--screen-color, #73c700),
-    0 0 10px var(--screen-color, #73c700), 0 0 20px var(--screen-color, #73c700),
-    0 0 30px var(--screen-color, #73c700), 0 0 40px var(--screen-color, #73c700),
-    0 0 55px var(--screen-color, #73c700), 0 0 70px var(--screen-color, #73c700);
+  text-shadow:
+    0 0 5px var(--screen-color, #73c700),
+    0 0 10px var(--screen-color, #73c700),
+    0 0 20px var(--screen-color, #73c700),
+    0 0 30px var(--screen-color, #73c700),
+    0 0 40px var(--screen-color, #73c700),
+    0 0 55px var(--screen-color, #73c700),
+    0 0 70px var(--screen-color, #73c700);
 }
 
 .main {
@@ -114,13 +119,16 @@ input[type='number']::-webkit-outer-spin-button {
 .console-wrapper::before {
   content: '';
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 200px;
   right: 200px;
   bottom: 100px;
   background-color: #e9e7e5;
   border-radius: 40px;
   z-index: -1;
+  -webkit-box-shadow: 0px 0px 116px 30px var(--screen-color, #73c700);
+  -moz-box-shadow: 0px 0px 116px 30px var(--screen-color, #73c700);
+  box-shadow: 0px 0px 116px 30px var(--screen-color, #73c700);
 }
 
 .console-wrapper::after {
@@ -144,6 +152,21 @@ input[type='number']::-webkit-outer-spin-button {
   gap: 5px;
   width: 100%;
   transform: translateY(-10px);
+}
+
+.power-led {
+  right: 138px;
+  bottom: 17px;
+  position: relative;
+  width: 5px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #550000;
+}
+
+.led-on {
+  background-color: #ff0000 !important;
+  box-shadow: 0 0 10px 5px #ff0000;
 }
 
 .pet-display img {
