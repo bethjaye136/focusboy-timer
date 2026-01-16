@@ -38,7 +38,7 @@ function startTimer() {
   minutesInput.disabled = true;
   startBtn.innerText = 'PAUSE';
 
-  petImg.src = '/images/nukoSkippingWalk.gif';
+  petImg.src = 'images/nukoSkippingWalk.gif';
   petSpeech.innerText = "Let's Go!";
 
   endTime = Date.now() + timeLeft * 1000;
@@ -60,7 +60,7 @@ function pauseTimer() {
   isRunning = false;
   startBtn.innerText = 'RESUME';
 
-  petImg.src = '/images/nukoCatHeart.gif';
+  petImg.src = 'images/nukoCatHeart.gif';
   petSpeech.innerText = 'Paused...';
 }
 
@@ -75,7 +75,7 @@ function resetTimer() {
   minutesInput.disabled = false;
   startBtn.innerText = 'START';
 
-  petImg.src = '/images/nukoCatHeart.gif';
+  petImg.src = 'images/nukoCatHeart.gif';
   petSpeech.innerText = 'Ready?';
 }
 
@@ -90,7 +90,7 @@ function timerFinished() {
   minutesInput.disabled = false;
   startBtn.innerText = 'DONE';
 
-  petImg.src = '/images/nukoCheering.gif';
+  petImg.src = 'images/nukoCheering.gif';
   petSpeech.innerText = 'Great Job!';
 }
 
