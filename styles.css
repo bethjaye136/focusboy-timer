@@ -213,6 +213,27 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
+#track-selector {
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 3px solid var(--screen-color, #73c700);
+  color: var(--screen-color, #73c700);
+  font-size: 1.2rem;
+  font-family: 'VT323', monospace;
+  cursor: pointer;
+  outline: none;
+}
+
+#track-selector:hover {
+  background-color: var(--screen-color, #73c700);
+  color: #f7f0e0;
+}
+
+#track-selector option {
+  background-color: #f7f0e0;
+  color: var(--screen-color, #73c700);
+}
+
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;

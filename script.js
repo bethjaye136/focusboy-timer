@@ -139,6 +139,30 @@ volumeSlider.addEventListener('input', (e) => {
   music.volume = e.target.value;
 });
 
+const trackSelector = document.getElementById('track-selector');
+trackSelector.addEventListener('change', (e) => {
+  const wasPlaying = !music.paused;
+
+  music.pause();
+  music.currentTime = 0;
+  music.src = e.target.value;
+  music.load();
+
+  if (wasPlaying) {
+    music
+      .play()
+      .then(() => {
+        musicBtn.innerText = 'PAUSE';
+      })
+      .catch((err) => {
+        console.log('Playback failed:', err);
+        musicBtn.innerText = 'PLAY';
+      });
+  } else {
+    musicBtn.innerText = 'PLAY';
+  }
+});
+
 const todoInput = document.getElementById('todo-input');
 const addTodoBtn = document.getElementById('add-todo-btn');
 const todoList = document.getElementById('todo-list');
