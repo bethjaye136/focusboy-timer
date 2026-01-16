@@ -3,6 +3,8 @@ const secondsDisplay = document.getElementById('seconds-display');
 const startBtn = document.getElementById('start-btn');
 const resetBtn = document.getElementById('reset-btn');
 const themeBtn = document.getElementById('theme-btn');
+const petImg = document.getElementById('pet-img');
+const petSpeech = document.getElementById('pet-speech');
 
 let timerId = null;
 let endTime = null;
@@ -33,6 +35,9 @@ function startTimer() {
   minutesInput.disabled = true;
   startBtn.innerText = 'PAUSE';
 
+  petImg.src = '/images/walk.gif';
+  petSpeech.innerText = "Let's Go!";
+
   endTime = Date.now() + timeLeft * 1000;
 
   timerId = setInterval(() => {
@@ -51,6 +56,9 @@ function pauseTimer() {
   clearInterval(timerId);
   isRunning = false;
   startBtn.innerText = 'RESUME';
+
+  petImg.src = '/images/idle.gif';
+  petSpeech.innerText = 'Paused...';
 }
 
 function resetTimer() {
@@ -63,6 +71,9 @@ function resetTimer() {
   secondsDisplay.innerText = '00';
   minutesInput.disabled = false;
   startBtn.innerText = 'START';
+
+  petImg.src = '/images/idle.gif';
+  petSpeech.innerText = 'Ready?';
 }
 
 function timerFinished() {
@@ -75,6 +86,9 @@ function timerFinished() {
   secondsDisplay.innerText = '00';
   minutesInput.disabled = false;
   startBtn.innerText = 'DONE';
+
+  petImg.src = '/images/roll.gif';
+  petSpeech.innerText = 'Great Job!';
 }
 
 function updateDisplay() {
