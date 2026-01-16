@@ -12,8 +12,12 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #f7f0e0;
   gap: 50px;
+  background-color: #f0f0f0;
+  background-image: linear-gradient(#e5e5e5 1px, transparent 1px),
+    linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
 }
 
 h1 {
@@ -54,17 +58,6 @@ button:hover {
   color: #f7f0e0;
 }
 
-.console-wrapper {
-  position: relative;
-  width: 700px;
-  height: 700px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-image 0.2s ease;
-  flex-shrink: 0;
-}
-
 .screen-text {
   color: var(--screen-color);
   position: absolute;
@@ -102,7 +95,46 @@ input#minutes-input {
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
+
   margin: 0;
+}
+
+.console-wrapper {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.console-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  right: 200px;
+  bottom: 100px;
+  background-color: #fffff9d7;
+  border-radius: 40px;
+  z-index: -1;
+}
+
+.console-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s ease;
+  z-index: 0;
+}
+
+.screen-text {
+  z-index: 10;
 }
 
 /* Green */
@@ -110,7 +142,7 @@ body.skin-1 {
   --screen-color: #73c700;
   background-color: #ebffe7;
 }
-body.skin-1 .console-wrapper {
+body.skin-1 .console-wrapper::after {
   background-image: url('/images/3.png');
 }
 
@@ -119,7 +151,7 @@ body.skin-2 {
   --screen-color: #007198;
   background-color: aliceblue;
 }
-body.skin-2 .console-wrapper {
+body.skin-2 .console-wrapper::after {
   background-image: url('/images/1.png');
 }
 
@@ -128,7 +160,7 @@ body.skin-3 {
   --screen-color: #521481;
   background-color: #f9dbfd;
 }
-body.skin-3 .console-wrapper {
+body.skin-3 .console-wrapper::after {
   background-image: url('/images/4.png');
 }
 
@@ -137,6 +169,6 @@ body.skin-4 {
   --screen-color: #f5af00;
   background-color: #faeed3;
 }
-body.skin-4 .console-wrapper {
+body.skin-4 .console-wrapper::after {
   background-image: url('/images/2.png');
 }
