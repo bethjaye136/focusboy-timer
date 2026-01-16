@@ -21,6 +21,30 @@
         <button id="reset-btn">RESET</button>
         <button id="theme-btn">COLOR</button>
       </div>
+      <audio id="bg-music" loop>
+        <source
+          src="music/glowness-skygaze-main-version-41562-02-55.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+
+      <div class="music-player">
+        <div class="track-name">
+          <marquee scrollamount="4">♫ FOCUS MODE - CHILL BEATS ♫</marquee>
+        </div>
+
+        <div class="player-controls">
+          <button id="music-btn">▶ PLAY</button>
+          <input
+            type="range"
+            id="volume-slider"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0.5"
+          />
+        </div>
+      </div>
     </div>
 
     <div class="console-wrapper" id="console">

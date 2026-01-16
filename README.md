@@ -76,6 +76,12 @@ FocusBoy is built to live in your workspace.
 
 ---
 
+Music from #Uppbeat (free for Creators!):
+https://uppbeat.io/t/skygaze/glowness
+License code: SWCKLXKQCJFNAQ4U
+
+---
+
 <div align="center">
   <sub>Built with 💚 by BethJaye</sub>
 </div>

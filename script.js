@@ -5,6 +5,9 @@ const resetBtn = document.getElementById('reset-btn');
 const themeBtn = document.getElementById('theme-btn');
 const petImg = document.getElementById('pet-img');
 const petSpeech = document.getElementById('pet-speech');
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-btn');
+const volumeSlider = document.getElementById('volume-slider');
 
 let timerId = null;
 let endTime = null;
@@ -35,7 +38,7 @@ function startTimer() {
   minutesInput.disabled = true;
   startBtn.innerText = 'PAUSE';
 
-  petImg.src = '/images/nukoDash.gif';
+  petImg.src = '/images/nukoSkippingWalk.gif';
   petSpeech.innerText = "Let's Go!";
 
   endTime = Date.now() + timeLeft * 1000;
@@ -104,3 +107,19 @@ function changeTheme() {
   currentSkin = (currentSkin % totalSkins) + 1;
   document.body.classList.add(`skin-${currentSkin}`);
 }
+
+music.volume = 0.5;
+
+musicBtn.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+    musicBtn.innerText = 'PAUSE';
+  } else {
+    music.pause();
+    musicBtn.innerText = 'PLAY';
+  }
+});
+
+volumeSlider.addEventListener('input', (e) => {
+  music.volume = e.target.value;
+});
