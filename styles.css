@@ -70,14 +70,20 @@ button:hover {
   justify-content: center;
   align-items: center;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .timer-display {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
+  font-size: 3.5rem;
   line-height: 1;
+  margin-top: 10px;
+  z-index: 2;
 }
 
 input#minutes-input {
@@ -133,8 +139,26 @@ input[type='number']::-webkit-outer-spin-button {
   z-index: 0;
 }
 
-.screen-text {
-  z-index: 10;
+.pet-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  transform: translateY(-90px);
+}
+
+.pet-display img {
+  height: 230px;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+.status-text {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* Green */
@@ -171,55 +195,4 @@ body.skin-4 {
 }
 body.skin-4 .console-wrapper::after {
   background-image: url('/images/2.png');
-}
-
-.pet-wrapper {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.pet-frame {
-  width: 150px;
-  height: 150px;
-  background-color: transparent;
-  border: 4px solid var(--screen-color, #73c700);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}
-
-.pet-frame img {
-  width: 150%;
-  height: 150%;
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
-.speech-bubble {
-  font-family: 'VT323', monospace;
-  font-size: 1.5rem;
-  color: var(--screen-color, #73c700);
-  background: white;
-  padding: 5px 15px;
-  border: 2px solid var(--screen-color, #73c700);
-  border-radius: 10px;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.speech-bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px 6px 0;
-  border-style: solid;
-  border-color: var(--screen-color, #73c700) transparent;
-  display: block;
-  width: 0;
 }
