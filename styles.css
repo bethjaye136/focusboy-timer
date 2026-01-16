@@ -192,12 +192,14 @@ input[type='number']::-webkit-outer-spin-button {
 
 input[type='range'] {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   background: transparent;
 }
 
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   height: 20px;
   width: 10px;
   background: var(--screen-color, #73c700);
