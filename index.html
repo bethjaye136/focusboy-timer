@@ -15,12 +15,24 @@
   <body class="skin-1">
     <div class="main">
       <h1>FocusBoy Timer</h1>
-
+      <div class="todo-container">
+        <div class="todo-input-group">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Add a task..."
+            maxlength="40"
+          />
+          <button id="add-todo-btn">+</button>
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
       <div class="controls">
         <button id="start-btn">START</button>
         <button id="reset-btn">RESET</button>
         <button id="theme-btn">COLOR</button>
       </div>
+
       <div class="preset-controls">
         <button class="preset-btn" data-minutes="5">5 MINUTES</button>
         <button class="preset-btn" data-minutes="10">10 MINUTES</button>

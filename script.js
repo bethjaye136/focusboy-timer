@@ -27,6 +27,7 @@ presetBtns.forEach((btn) => {
     if (!isRunning) {
       const minutes = parseInt(e.target.dataset.minutes);
       minutesInput.value = minutes;
+      secondsDisplay.innerText = '00';
       timeLeft = 0;
     }
   });
@@ -136,4 +137,37 @@ musicBtn.addEventListener('click', () => {
 
 volumeSlider.addEventListener('input', (e) => {
   music.volume = e.target.value;
+});
+
+const todoInput = document.getElementById('todo-input');
+const addTodoBtn = document.getElementById('add-todo-btn');
+const todoList = document.getElementById('todo-list');
+
+function addTodo() {
+  const text = todoInput.value.trim();
+  if (text) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span class="todo-text">${text}</span>
+      <button class="delete-btn">×</button>
+    `;
+
+    li.querySelector('.delete-btn').addEventListener('click', () => {
+      li.remove();
+    });
+
+    li.querySelector('.todo-text').addEventListener('click', () => {
+      li.classList.toggle('completed');
+    });
+
+    todoList.appendChild(li);
+    todoInput.value = '';
+  }
+}
+
+addTodoBtn.addEventListener('click', addTodo);
+todoInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    addTodo();
+  }
 });

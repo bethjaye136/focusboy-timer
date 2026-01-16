@@ -50,7 +50,7 @@ h1 {
 
 button {
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 6px;
   width: 200px;
   background-color: transparent;
   border: 4px solid var(--screen-color, #73c700);
@@ -183,7 +183,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 .music-player {
   margin-top: 20px;
-  width: 450px;
+  width: 640px;
   border: 4px solid var(--screen-color, #73c700);
   padding: 10px;
   background-color: transparent;
@@ -294,4 +294,99 @@ body.skin-4 .console-wrapper::after {
 }
 body.skin-4 .console-wrapper::before {
   background-color: #faeed3;
+}
+
+/* To-Do List Styles */
+.todo-container {
+  width: 640px;
+  margin: 20px 0;
+}
+
+.todo-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px;
+  background-color: transparent;
+  border: 4px solid var(--screen-color, #73c700);
+  color: var(--screen-color, #73c700);
+  font-size: 1.5rem;
+  font-family: 'VT323', monospace;
+  outline: none;
+}
+
+#todo-input::placeholder {
+  color: var(--screen-color, #73c700);
+  opacity: 0.5;
+}
+
+#add-todo-btn {
+  width: 60px;
+  padding: 10px;
+  margin: 0;
+  background-color: transparent;
+  border: 4px solid var(--screen-color, #73c700);
+  color: var(--screen-color, #73c700);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#add-todo-btn:hover {
+  background-color: var(--screen-color, #73c700);
+  color: #f7f0e0;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 5px 0;
+  border: 3px solid var(--screen-color, #73c700);
+  background-color: transparent;
+  font-size: 1.3rem;
+  color: var(--screen-color, #73c700);
+}
+
+#todo-list li.completed .todo-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: 2px solid var(--screen-color, #73c700);
+  color: var(--screen-color, #73c700);
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background-color: var(--screen-color, #73c700);
+  color: #f7f0e0;
+}
+
+.todo-text {
+  cursor: pointer;
+  flex: 1;
 }
