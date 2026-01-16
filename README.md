@@ -4,19 +4,21 @@
 
 **Your Retro Productivity Pal**
 
-  <p>
-    <a href="INSERT_GITHUB_PAGES_LINK_HERE">
-      <img src="https://img.shields.io/badge/PLAY_NOW-73c700?style=for-the-badge&logo=game-and-watch&logoColor=black" alt="Play Now" />
-    </a>
-  </p>
+<p>
+  <a href="INSERT_GITHUB_PAGES_LINK_HERE">
+    <img src="https://img.shields.io/badge/PLAY_NOW-73c700?style=for-the-badge&logo=game-and-watch&logoColor=black" alt="Play Now" />
+  </a>
+</p>
 
-  <p>
-    <a href="#-features">Features</a> •
-    <a href="#-extra-details">How it Works</a> •
-    <a href="#-embed-in-notion">Notion Setup</a>
-  </p>
+<p>
+  <a href="#-features">Features</a> •
+  <a href="#-technical-highlights">Under the Hood</a> •
+  <a href="#-embed-in-notion">Notion Setup</a>
+</p>
 
-  </div>
+<img src="images/screenshot-placeholder.png" alt="FocusBoy Demo" width="600" />
+
+</div>
 
 ---
 
@@ -24,24 +26,21 @@
 
 **FocusBoy** is a nostalgic take on the Pomodoro technique, blending the "Y2K Handheld" aesthetic with professional-grade timekeeping logic.
 
-I built this because most web timers are either boring, glitchy, or just don't fit the vibe. FocusBoy is designed to be **embedded**, **customizable**, and **drift-free**. It's not just a timer; it's a desk companion with fun interactive features.
+I built this because most web timers are either boring, glitchy, or just don't fit the vibe. FocusBoy is designed to be **embedded**, **customizable**, and **drift-free**. It's not just a timer; it's a desk companion that makes productivity feel like a game.
 
-## ✨ Features
+## ✨ Key Features
 
-- **⏱️ Custom Timer:** Set any duration (minutes) for your focus session.
-- **🎨 4 Color Themes:** Switch between Grey, Teal, Purple, and Yellow consoles.
-- **💾 Memory Function:** Remembering your custom time setting for easy resets.
-- **📱 Responsive:** Floating layout perfect for embedding in dashboards.
-- **⏱️ Drift-Free Precision:** Unlike standard JS timers that lose sync, FocusBoy uses `Date.now()` delta-checks to ensure 100% accuracy, even if the tab is inactive.
-- **🎨 Dynamic Theming:** 4 switchable "Skins" (Atomic Purple, Teal, classic Grey, Yellow) powered by CSS Variables.
-- **💾 Smart State:** Handles browser interruptions gracefully without losing your progress.
-- **📱 Widget Ready:** Floating, responsive layout designed perfectly for Notion dashboards or OBS overlays.
+- **⏱️ Drift-Free Precision:** Unlike standard JS timers that lose sync when tabs are inactive, FocusBoy uses `Date.now()` delta-checks to ensure 100% accuracy.
+- **🐱 Pixel Pet Companion:** Includes a reactive "Tamagotchi-style" mascot that works when you work, sleeps when you rest, and celebrates when you finish.
+- **🎵 Built-in Lo-Fi Player:** Integrated Web Audio API player with volume control for instant focus music.
+- **🎨 4 Retro Skins:** Switch instantly between Atomic Purple, Teal, Classic Grey, and Yellow using CSS variables.
+- **📱 Responsive Design:** A floating layout optimized for Notion dashboards, OBS overlays, or side-panels.
 
-## 🧠 Extra Details
+## 🧠 Technical Highlights
 
-This wasn't just about CSS; the logic needed to be solid.
+This wasn't just about CSS; the logic needed to be solid for a production-grade tool.
 
-### Fixing the drifting/glitch issue
+### 1. Solving the "Browser Drift"
 
 Standard `setInterval` loops often drift by a few milliseconds when the browser main thread is busy. To fix this, I implemented a **Delta-Time** approach:
 
@@ -49,15 +48,18 @@ Standard `setInterval` loops often drift by a few milliseconds when the browser 
 2.  The loop constantly checks the difference between `Now` and `Target`.
 3.  This ensures the timer is accurate to the millisecond, regardless of CPU load.
 
-### CSS Architecture
+### 2. State-Driven UI
 
-Instead of loading multiple stylesheets, I used **CSS Custom Properties (Variables)** scoped to the `<body>`.
+The application separates **State** (Time, Running Status) from **View** (DOM updates). Changing the skin doesn't just change a color; it updates the CSS Variables scoped to the `<body>`, allowing the entire app (borders, text, SVG shadows) to thematically shift without expensive re-renders.
 
     /* Example of the Skin System */
     body.skin-1 { --screen-color: #73c700; }
     body.skin-2 { --screen-color: #007198; }
 
-This allows the entire color scheme (borders, text, SVGs) to update instantly with a single class change in JavaScript.
+### 3. Audio & Accessibility
+
+- **Web Audio API:** The music player controls volume dynamically without relying on external iframes.
+- **Accessibility:** All inputs have ARIA labels, and standard browser sliders are styled with `appearance: none` for cross-browser consistency.
 
 ## 🚀 Embed in Notion
 
@@ -72,12 +74,13 @@ FocusBoy is built to live in your workspace.
 
 - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) **Semantic Structure**
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) **Flexbox & Variables**
-- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E) **ES6+ Logic**
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E) **ES6+ Logic & Audio API**
 
 ---
 
+**Credits:**
 Music from #Uppbeat (free for Creators!):
-https://uppbeat.io/t/skygaze/glowness
+[Skygaze - Glowness](https://uppbeat.io/t/skygaze/glowness)
 License code: SWCKLXKQCJFNAQ4U
 
 ---
