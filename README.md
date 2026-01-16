@@ -12,11 +12,11 @@
 
 <p>
   <a href="#-features">Features</a> •
-  <a href="#-technical-highlights">Under the Hood</a> •
+  <a href="#-technical-highlights">Technical Highlights</a> •
   <a href="#-embed-in-notion">Notion Setup</a>
 </p>
 
-<img src="images/screenshot.png" alt="FocusBoy Demo" width="600" />
+<img src="/images/screenshot.png" alt="FocusBoy Demo" width="600" />
 
 </div>
 
