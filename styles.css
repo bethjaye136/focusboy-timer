@@ -145,11 +145,11 @@ input[type='number']::-webkit-outer-spin-button {
   align-items: center;
   gap: 5px;
   width: 100%;
-  transform: translateY(-90px);
+  transform: translateY(-10px);
 }
 
 .pet-display img {
-  height: 230px;
+  height: 80px;
   width: auto;
   image-rendering: pixelated;
 }
