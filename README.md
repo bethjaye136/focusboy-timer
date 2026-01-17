@@ -5,7 +5,7 @@
 **Your Retro Productivity Pal**
 
 <p>
-  <a href="INSERT_GITHUB_PAGES_LINK_HERE">
+  <a href="https://bethjaye136.github.io/focusboy-timer/">
     <img src="https://img.shields.io/badge/PLAY_NOW-73c700?style=for-the-badge&logo=game-and-watch&logoColor=black" alt="Play Now" />
   </a>
 </p>
@@ -16,7 +16,7 @@
   <a href="#-embed-in-notion">Notion Setup</a>
 </p>
 
-<img src="images/Screenshot.png.png" alt="FocusBoy Demo" width="600" />
+<img src="images/Screenshot.png" alt="FocusBoy Demo" width="600" />
 
 </div>
 
@@ -65,7 +65,7 @@ The application separates **State** (Time, Running Status) from **View** (DOM up
 
 FocusBoy is built to live in your workspace.
 
-1.  Copy the live link: `[INSERT YOUR LINK HERE]`
+1.  Copy the live link: `https://bethjaye136.github.io/focusboy-timer/`
 2.  Go to your Notion page.
 3.  Type `/embed` and paste the link.
 4.  Resize the block until the Gameboy fits perfectly!
